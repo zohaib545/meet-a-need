@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.pages.home');
+});
+
+
+Route::prefix('admin')->group(function(){
+    Route::get('/', 'Admin\DashboardController@index');
 });
