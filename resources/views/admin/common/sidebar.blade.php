@@ -31,9 +31,9 @@
         <h3>Listing Management</h3>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="{{url('admin/educational-institution')}}" class="nav-link {{Request::is('admin/educational-institution/*')? 'active': ''}}">
+                <a href="{{url('admin/university')}}" class="nav-link {{Request::is('admin/university/*') || Request::is('admin/university') ? 'active': ''}}">
                     <i class="fa fa-institution"></i>
-                    <span>Educational Institutions</span>
+                    <span>University</span>
                 </a>
             </li>
             <li class="nav-item">

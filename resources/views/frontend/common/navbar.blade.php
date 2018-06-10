@@ -10,7 +10,7 @@
                 <!-- /.header-toggle -->
                 <div class="header-logo">
                     <a href="{{url('/')}}">
-                        <img src="assets/img/logo.svg" class="svg" alt="Home">
+                        <img src="{{asset('assets/img/logo.svg')}}" class="svg" alt="Home">
                     </a>
                     <a href="{{url('/')}}" class="header-title">Meet a Need</a>
                 </div>

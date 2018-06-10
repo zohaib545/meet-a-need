@@ -1,5 +1,9 @@
 @extends('frontend.common.mappage_master')
 
+<!-- page title -->
+@section('title', 'Home')
+<!-- page title -->
+
 <!-- Page Content -->
 @section('page_content')
 <div class="map-wrapper">

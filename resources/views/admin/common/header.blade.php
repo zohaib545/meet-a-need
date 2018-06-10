@@ -15,7 +15,7 @@
                     <a href="{{url('admin/profile')}}">Your Profile</a>
                 </li>
                 <li>
-                    <a href="{{('admin/logout')}}">Logout</a>
+                    <a href="{{url('admin/logout')}}">Logout</a>
                 </li>
             </ul>
             <!-- /.admin-header-avatar-menu -->

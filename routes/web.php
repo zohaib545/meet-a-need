@@ -18,4 +18,18 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function(){
     Route::get('/', 'Admin\DashboardController@index');
+    //LOCATION
+    Route::prefix('location')->group(function(){
+        Route::get('/', 'Admin\LocationController@index');
+        Route::post('/', 'Admin\LocationController@store');
+        Route::delete('/', 'Admin\LocationController@delete');
+    });
+
+    Route::prefix('university')->group(function(){
+        Route::get('/', 'Admin\UniversityController@index');
+        Route::get('{location_slug}/edit', 'Admin\UniversityController@edit');
+        Route::put('/', 'Admin\UniversityController@update');
+    });
+
+
 });

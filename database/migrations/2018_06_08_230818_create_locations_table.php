@@ -15,6 +15,12 @@ class CreateLocationsTable extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('place_id');
+            $table->string('name');
+            $table->string('address');
+            $table->enum('type', ['university','healthcare','hotel','restaurant']);
+            $table->string('description', 2000);
+            $table->string('slug');
             $table->timestamps();
         });
     }

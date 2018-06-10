@@ -6,7 +6,7 @@
                     <div class="col-lg-4">
                         <div class="widget">
                             <h3>
-                                <img src="assets/img/logo.svg" class="svg" alt="Home"> Meet a Need
+                                <img src="{{asset('assets/img/logo.svg')}}" class="svg" alt="Home"> Meet a Need
                                 <span>Places Directory</span>
                             </h3>
                             <p>
