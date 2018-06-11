@@ -1,21 +1,20 @@
 @extends('admin.common.master')
 
 <!-- page title -->
-@section('title', 'Edit University')
+@section('title', 'Edit Hotel')
 <!-- page title -->
 
 <!-- page styles -->
 @section('plugin_styles')
-<link rel="stylesheet" href="{{asset('assets/libraries/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.css')}}"> @stop()
 <!-- page styles -->
 @section('page_styles') @stop()
 
 <!-- page heading and subheading-->
-@section('page_heading', $location->name) @section('page_subheading', 'Edit University')
+@section('page_heading', $location->name) @section('page_subheading', 'Edit Hotel')
 
 <!-- previous_page -->
 @section('previous_page_url')
-<a href="{{url('admin/university')}}" class="admin-page-title-back">
+<a href="{{url('admin/hotel')}}" class="admin-page-title-back">
     <i class="fa fa-long-arrow-left"></i>
 </a>
 @stop()
@@ -24,7 +23,7 @@
 <!-- breadcrumbs -->
 @section('breadcrumbs')
 <a class="breadcrumb-item" href="{{url('admin')}}">Dashboard</a>
-<a class="breadcrumb-item" href="{{url('admin/university')}}">University</a>
+<a class="breadcrumb-item" href="{{url('admin/hotel')}}">Hotel</a>
 <span class="breadcrumb-item active">Edit</span>
 @stop()
 <!-- breadcrumbs -->
@@ -33,7 +32,7 @@
 @section('page_content')
 <section id="edit-university">
     <div class="box" id="box">
-        <form action="{{url('admin/university')}}" method="POST" class="form">
+        <form action="{{url('admin/hotel')}}" method="POST" class="form">
             @method('PUT')
             <!--  -->
             @csrf
@@ -80,20 +79,20 @@
                         <h6 class="page-title-small mb30">Additional Information</h6>
                         <div class="form-group">
                             <label for="website" class="control-label">Website</label>
-                            <input type="url" name="website" value="{{$university->website}}" id="website" class="form-control">
+                            <input type="url" value="{{$hotel->website}}" name="website" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="website" class="control-label">Phone</label>
-                            <input type="text" name="phone" value="{{$university->phone}}" id="phone" class="form-control">
+                            <label for="phone" class="control-label">Phone</label>
+                            <input type="text" name="phone" value="{{$hotel->phone}}" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="email" class="control-label">Email</label>
-                            <input type="email" name="email" id="email" value="{{$university->email}}" class="form-control">
+                            <input type="email" name="email" value="{{$hotel->email}}" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="sector" class="control-label">Sector</label>
-                            {{Form::select('sector', [''=>'Please Select', 'government' => 'Government Sector', 'private' => 'Private Sector'], $university->sector,
-                            ['class'=>'form-control'])}}
+                            <label for="stars" class="control-label">Stars</label>
+                            {{Form::select('stars', [''=>'Please Select','1' => '1', '2' => '2',
+                            '3' => '3', '4' => '4', '5' => '5'], $hotel->stars,['class'=>'form-control'])}}
                         </div>
                     </div>
                 </div>
@@ -101,77 +100,43 @@
                 <div class="row">
                     <div class="col-12">
                         <h6 class="page-title-small mb30">
-                            Admission Details
+                            Rooms Details
                         </h6>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Course Name</th>
-                                    <th>Course Level</th>
-                                    <th>Last Date to Apply</th>
-                                    <th>Eligibility Criteria</th>
-                                    <th>Actions</th>
+                                    <th>Room Type</th>
+                                    <th>Options</th>
+                                    <th>Price/night (Rs.)</th>
+                                    <th class="min-width">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody id="admission_detail_body">
-                                @if($admission_details->count() == 0)
-                                <tr id="admission_detail_0">
+                            <tbody id="hotel_detail_body">
+                                @foreach($hotel_details as $index => $hotel_detail)
+                                <tr id="hotel_detail_{{$index}}">
                                     <td>
-                                        <input required type="text" name="admission_detail[0][course_name]" class="form-control">
+                                        <input placeholder="e.g. Double or Twin" value="{{$hotel_detail->room_type}}" type="text" required name="hotel_detail[{{$index}}][room_type]" class="form-control">
                                     </td>
                                     <td>
-                                        <select required name="admission_detail[0][course_level]" class="form-control">
-                                            <option value="">Please Select</option>
-                                            <option value="bachelors">Bachelors</option>
-                                            <option value="masters">Masters</option>
-                                            <option value="phd">PHD</option>
-                                        </select>
+                                        <textarea name="hotel_detail[{{$index}}][options]" placeholder="e.g. Free Wifi" class="form-control">{{$hotel_detail->options}}</textarea>
                                     </td>
                                     <td>
-                                        <input required type="date" name="admission_detail[0][date]" class="form-control">
+                                        <input type="number" placeholder="e.g. 2800" value="{{$hotel_detail->price_per_night}}" name="hotel_detail[{{$index}}][price_per_night]" class="form-control"
+                                            required>
                                     </td>
                                     <td>
-                                        <textarea required name="admission_detail[0][eligibility]" class="form-control"></textarea>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-danger text-center delete-admission-detail" data-target="#admission_detail_0">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                @else
-                                <!--  -->
-                                @foreach($admission_details as $index => $admission_detail)
-                                <tr id="admission_detail_{{$index}}">
-                                    <td>
-                                        <input required type="text" value="{{$admission_detail->course_name}}" name="admission_detail[{{$index}}][course_name]" class="form-control">
-                                    </td>
-                                    <td>
-                                        {{Form::select("admission_detail[$index][course_level]", ['' => 'Please Select', 'bachelors' => 'Bachelors', 'master' =>
-                                        'Masters', 'phd' => 'Ph.D'], $admission_detail->course_level, ['required', 'class'
-                                        => 'form-control'])}}
-                                    </td>
-                                    <td>
-                                        <input required type="date" value="{{$admission_detail->date}}" name="admission_detail[{{$index}}][date]" class="form-control">
-                                    </td>
-                                    <td>
-                                        <textarea required name="admission_detail[{{$index}}][eligibility]" class="form-control">{{$admission_detail->eligibility}}</textarea>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-danger text-center delete-admission-detail" data-target="#admission_detail_{{$index}}">
+                                        <button type="button" class="btn btn-danger text-center delete-hotel-detail" data-target="#hotel_detail_{{$index}}">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     </td>
                                 </tr>
                                 @endforeach
-                                <!--  -->
-                                @endif
                             </tbody>
                         </table>
                         <p class="text-center">
                             <br>
                             <br>
-                            <button class="btn btn-warning add-admission-detail" type="button">Insert Row</button>
+                            <button class="btn btn-warning add-hotel-detail" type="button">Insert Row</button>
                         </p>
                     </div>
                 </div>
@@ -181,7 +146,7 @@
             <br>
             <!-- /.box-inner -->
             <button type="submit" class="btn btn-primary pull-right">Submit</button>
-            <input type="hidden" name="id" value="{{$university->id}}">
+            <input type="hidden" name="id" value="{{$hotel->id}}">
         </form>
     </div>
 </section>
@@ -191,10 +156,9 @@
 
 <!-- page scripts -->
 @section('page_scripts')
-<script src="{{asset('assets/libraries/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.js')}}"></script>
 <script>
-    var admissionDetails = "{{ $admission_details->count() + 1}}";
+    var hotelDetail = "{{$hotel_details->count() + 1}}";
 </script>
-<script src="{{asset('js/edit-university.js')}}"></script>
+<script src="{{asset('js/edit-hotel.js')}}"></script>
 <!-- page scripts go here -->
 @stop()

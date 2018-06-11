@@ -14,36 +14,25 @@
                     <div class="map-results-list tse-scrollable">
                         <div class="tse-content">
                             <div class="map-results-header">
-                                <h3>Best Spots Around</h3>
+                                <h3>Recently Added Places</h3>
                                 <p>
-                                    Curabitur viverra risus sed tellus eleifend, ut pretium tortor pulvinar. Quisque in neque turpis. Aenean auctor enim vitae.
+                                    Have a look at the most recent places added to our platform.
                                 </p>
-                                <div class="map-results-count">72 items matching search query</div>
-                                <!-- /.map-results-count -->
                             </div>
                             <!-- /.map-results-header -->
                             <div class="map-results-content clickable">
-                                <div class="listing-row-medium">
+                                @foreach($locations as $index => $location)
+                                <div class="listing-row-medium" data-location="{{$location->id}}">
                                     <div class="listing-row-medium-inner">
-                                        <a href="listings-detail.html" class="listing-row-medium-image" style="background-image: url(assets/img/tmp/listing-1.jpg);">
-                                            <span class="listing-row-medium-featured">Featured</span>
-                                            <!-- /.listing-row-medium-featured -->
+                                        <a href="listings-detail.html" class="listing-row-medium-image" style="background-image: url({{$location->images->count() == 0? 'assets/img/tmp/listing-15.jpg' : $location->images[0]->url}});">
                                         </a>
                                         <div class="listing-row-medium-content">
-                                            <a class="listing-row-medium-category tag" href="listings-detail.html">Luxury Cars</a>
-                                            <span class="listing-row-medium-rating">
-                                                <span>(32)</span>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </span>
+                                            <br>
                                             <h4 class="listing-row-medium-title">
-                                                <a href="listings-detail.html">Cozzy Coffee Shop</a>
+                                                <a href="listings-detail.html">{{$location->name}}</a>
                                             </h4>
                                             <div class="listing-row-medium-address">
-                                                4700 Hart Country Lane Blue Ridge
+                                                {{$location->address}}
                                             </div>
                                             <!-- /.listing-row-medium-address -->
                                         </div>
@@ -51,6 +40,7 @@
                                     </div>
                                     <!-- /.listing-row-medium-inner -->
                                 </div>
+                                @endforeach
                             </div>
                             <!-- /.map-results-content -->
                         </div>
@@ -102,128 +92,6 @@
                                 sed semper. Donec ut lacinia velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                 Sed fringilla bibendum tincidunt. Suspendisse finibus consectetur arcu in auctor.
                             </p>
-                            <div class="tags">
-                                <div class="tag">Conditioning</div>
-                                <!-- /.tag -->
-                                <div class="tag">Wi-Fi</div>
-                                <!-- /.tag -->
-                                <div class="tag">Parking</div>
-                                <!-- /.tag -->
-                                <div class="tag">Credit Cards</div>
-                                <!-- /.tag -->
-                                <div class="tag">Cable TV</div>
-                                <!-- /.tag -->
-                                <div class="tag">Cleaning</div>
-                                <!-- /.tag -->
-                                <div class="tag">Balcony</div>
-                                <!-- /.tag -->
-                                <div class="tag">Newspaper</div>
-                                <!-- /.tag -->
-                            </div>
-                            <!-- /.tags -->
-                            <h4>Opening Hours</h4>
-                            <table class="table table-bordered opening-hours">
-                                <tbody>
-                                    <tr>
-                                        <th class="min-width center">Mon</th>
-                                        <td>8:00 am - 8:00 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="min-width center">Tue</th>
-                                        <td>9:00 am - 9:00 pm</td>
-                                    </tr>
-                                    <tr class="open">
-                                        <th class="min-width center">Wed</th>
-                                        <td>8:00 am - 3:00 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="min-width center">Thu</th>
-                                        <td>7:00 am - 9:00 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="min-width center">Fri</th>
-                                        <td>10:00am - 5:00pm</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="min-width center">Sat</th>
-                                        <td>8:00 am - 11:00 am</td>
-                                    </tr>
-                                    <tr class="closed">
-                                        <th class="min-width center">Sun</th>
-                                        <td>closed</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <h4>User Reviews
-                                <small>(4.8/13)</small>
-                            </h4>
-                            <ul class="comments">
-                                <li>
-                                    <div class="comment">
-                                        <div class="comment-author">
-                                            <a href="#" style="background-image: url('assets/img/tmp/user-1.jpg');"></a>
-                                        </div>
-                                        <!-- /.comment-author -->
-                                        <div class="comment-content">
-                                            <div class="comment-meta">
-                                                <div class="comment-meta-author">
-                                                    Derek S. Minter
-                                                </div>
-                                                <!-- /.comment-meta-author -->
-                                                <div class="comment-meta-date">
-                                                    <span>8:54 PM 11/23/2016</span>
-                                                </div>
-                                            </div>
-                                            <!-- /.comment -->
-                                            <div class="comment-body">
-                                                <div class="comment-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <!-- /.comment-rating -->
-                                                <p>
-                                                    Nullam sollicitudin justo neque, sit amet auctor urna pretium in. Aenean elementum venenatis nisl at tincidunt. Vivamus hendrerit
-                                                    porta cursus. Cras elementum tortor ut tincidunt feugiat.
-                                                </p>
-                                            </div>
-                                            <!-- /.comment-body -->
-                                        </div>
-                                        <!-- /.comment-content -->
-                                        <div class="comment comment-answer">
-                                            <div class="comment-author">
-                                                <a href="#" style="background-image: url('assets/img/tmp/user-2.jpg');"></a>
-                                            </div>
-                                            <!-- /.comment-author -->
-                                            <div class="comment-content">
-                                                <div class="comment-meta">
-                                                    <div class="comment-meta-author">
-                                                        Elizabeth T. Schultheis
-                                                    </div>
-                                                    <!-- /.comment-meta-author -->
-                                                    <div class="comment-meta-date">
-                                                        <span>8:54 PM 11/23/2016</span>
-                                                    </div>
-                                                </div>
-                                                <!-- /.comment -->
-                                                <div class="comment-body">
-                                                    <p>
-                                                        Quisque aliquam ante in ullamcorper mattis. In fringilla mollis scelerisque. Morbi quis justo eget erat maximus vulputate
-                                                        non nec nulla. Nam eget tincidunt sapien. Nullam aliquam enim a fringilla
-                                                        rutrum.
-                                                    </p>
-                                                </div>
-                                                <!-- /.comment-body -->
-                                            </div>
-                                            <!-- /.comment-content -->
-                                        </div>
-                                        <!-- /.comment -->
-                                    </div>
-                                    <!-- /.comment -->
-                                </li>
-                            </ul>
                         </div>
                         <!-- /.tse-content -->
                     </div>
@@ -238,61 +106,13 @@
             <!-- /.map-results -->
             <div class="map-object">
                 <div id="map-object"></div>
-                <div class="map-toolbar">
-                    <div class="map-toolbar-group">
-                        <div id="map-toolbar-action-zoom-in" class="map-toolbar-group-item">
-                            <i class="fa fa-plus"></i>
-                        </div>
-                        <!-- /.map-toolbar-group-item -->
-                        <div id="map-toolbar-action-zoom-out" class="map-toolbar-group-item">
-                            <i class="fa fa-minus"></i>
-                        </div>
-                        <!-- /.map-toolbar-group-item -->
-                    </div>
-                    <!-- /.map-toolbar-group -->
-                    <div class="map-toolbar-group">
-                        <div id="map-toolbar-action-current-position" class="map-toolbar-group-item">
-                            <i class="fa fa-location-arrow"></i>
-                        </div>
-                        <!-- /.map-toolbar-group-item -->
-                        <div id="map-toolbar-action-fullscreen" class="map-toolbar-group-item">
-                            <i class="fa fa-arrows-alt"></i>
-                        </div>
-                        <!-- /.map-toolbar-group-item -->
-                    </div>
-                    <!-- /.map-toolbar-group -->
-                    <div class="map-toolbar-group">
-                        <div id="map-toolbar-action-roadmap" class="map-toolbar-group-item">Roadmap</div>
-                        <!-- /.map-toolbar-group-item -->
-                        <div id="map-toolbar-action-satellite" class="map-toolbar-group-item">Satellite</div>
-                        <!-- /.map-toolbar-group-item -->
-                        <div id="map-toolbar-action-terrain" class="map-toolbar-group-item">Terrain</div>
-                        <!-- /.map-toolbar-group-item -->
-                    </div>
-                    <!-- /.map-toolbar-group -->
-                </div>
-                <!-- /.map-toolbar -->
                 <div class="map-filter-wrapper">
                     <div class="container-fluid">
                         <div class="map-filter">
                             <form>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Keyword">
+                                    <input type="text" id="search" class="form-control" placeholder="Location">
                                 </div>
-                                <!-- /.form-group -->
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Location">
-                                </div>
-                                <!-- /.form-group -->
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Category">
-                                </div>
-                                <!-- /.form-group -->
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Price">
-                                </div>
-                                <!-- /.form-group -->
-                                <button type="submit" class="btn">Filter Listings</button>
                             </form>
                         </div>
                         <!-- /.map-filter -->
@@ -310,3 +130,9 @@
 <!-- /.map-wrapper -->
 @stop()
 <!-- Page Content -->
+@section('page_scripts')
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC36TsKE1EwXWhh1exmqnRz4ybKVlQ45a0&libraries=places"></script>
+<script src="{{asset('assets/js/google-map-infobox.min.js')}}"></script>
+<script src="{{asset('js/home.js')}}"></script>
+<!--  -->
+@stop()

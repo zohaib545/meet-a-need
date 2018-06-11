@@ -32,10 +32,10 @@
         <div class="col-md-6 col-lg-3">
             <div class="stat-box stat-box-red">
                 <div class="stat-box-icon">
-                    <i class="fa fa-pie-chart"></i>
+                    <i class="fa fa-institution"></i>
                 </div>
-                <strong>$425,123</strong>
-                <span>Total Earnings</span>
+                <strong>{{$universities}}</strong>
+                <span>Universities</span>
             </div>
             <!-- /.stat-box -->
         </div>
@@ -43,10 +43,10 @@
         <div class="col-md-6 col-lg-3">
             <div class="stat-box stat-box-green">
                 <div class="stat-box-icon">
-                    <i class="fa fa-comments"></i>
+                    <i class="fa fa-hospital-o"></i>
                 </div>
-                <strong>4,558</strong>
-                <span>Pending Comments</span>
+                <strong>{{$healthcare}}</strong>
+                <span>Healthcare</span>
             </div>
             <!-- /.stat-box -->
         </div>
@@ -54,10 +54,10 @@
         <div class="col-md-6 col-lg-3">
             <div class="stat-box stat-box-blue">
                 <div class="stat-box-icon">
-                    <i class="fa fa-diamond"></i>
+                    <i class="fa fa-hotel"></i>
                 </div>
-                <strong>16,584</strong>
-                <span>Total Objects</span>
+                <strong>{{$hotels}}</strong>
+                <span>Hotels</span>
             </div>
             <!-- /.stat-box -->
         </div>
@@ -65,10 +65,10 @@
         <div class="col-md-6 col-lg-3">
             <div class="stat-box stat-box-purple">
                 <div class="stat-box-icon">
-                    <i class="fa fa-database"></i>
+                    <i class="fa fa-cutlery"></i>
                 </div>
-                <strong>Very Good</strong>
-                <span>Database performace</span>
+                <strong>{{$restaurants}}</strong>
+                <span>Restaurants</span>
             </div>
             <!-- /.stat-box -->
         </div>
@@ -79,28 +79,26 @@
 <!-- /.stats -->
 <div class="cards-wrapper">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="box">
                 <div class="box-inner">
                     <div class="box-title clearfix">
-                        <h2>Most recent listings</h2>
+                        <h2>Most recent locations</h2>
                     </div>
                     <!-- /.box-title -->
                     <div class="cards">
                         <div class="row">
-                            <div class="col-sm-6">
-                                <div class="card card-dark" style="background-image: url(assets/img/tmp/listing-15.jpg);">
+                            @foreach($locations as $location)
+                            <div class="col-sm-4">
+                                <div class="card card-dark" style="background-image: url({{$location->images->count() == 0? 'assets/img/tmp/listing-15.jpg' : $location->images[0]->url}});">
                                     <div class="card-inner">
-                                        <div class="card-close">
-                                            <i class="fa fa-close"></i>
-                                        </div>
                                         <!-- /.card-close -->
-                                        <div class="card-attribute">14/07/2017 12:30 - 13:15</div>
+                                        <div class="card-attribute">{{date('d M, Y', strtotime($location->created_at))}}</div>
                                         <div class="card-content">
                                             <h2>
-                                                <a href="#">Etiam facilisis sem quis dui tempor commodo</a>
+                                                <a href="#">{{$location->name}}</a>
                                             </h2>
-                                            <p>Donec sollicitudin sem sed purus suscipit sodales. In in mi a turpis consectetur</p>
+                                            <p>{{($location->address)}}</p>
                                         </div>
                                         <!-- /.card-content -->
                                     </div>
@@ -108,189 +106,7 @@
                                 </div>
                                 <!-- /.card -->
                             </div>
-                            <!-- /.col-* -->
-                            <div class="col-sm-6">
-                                <div class="card card-dark" style="background-image: url(assets/img/tmp/listing-10.jpg);">
-                                    <div class="card-inner">
-                                        <div class="card-close">
-                                            <i class="fa fa-close"></i>
-                                        </div>
-                                        <!-- /.card-close -->
-                                        <div class="card-attribute">14/07/2017 12:30 - 13:15</div>
-                                        <div class="card-content">
-                                            <h2>
-                                                <a href="#">Etiam facilisis sem quis dui tempor commodo</a>
-                                            </h2>
-                                            <p>Donec sollicitudin sem sed purus suscipit sodales. In in mi a turpis consectetur</p>
-                                        </div>
-                                        <!-- /.card-content -->
-                                    </div>
-                                    <!-- /.card-inner -->
-                                </div>
-                                <!-- /.card -->
-                            </div>
-                            <!-- /.col-* -->
-                            <div class="col-sm-6">
-                                <div class="card card-dark" style="background-image: url(assets/img/tmp/listing-2.jpg);">
-                                    <div class="card-inner">
-                                        <div class="card-close">
-                                            <i class="fa fa-close"></i>
-                                        </div>
-                                        <!-- /.card-close -->
-                                        <div class="card-attribute">14/07/2017 12:30 - 13:15</div>
-                                        <div class="card-content">
-                                            <h2>
-                                                <a href="#">Etiam facilisis sem quis dui tempor commodo</a>
-                                            </h2>
-                                            <p>Donec sollicitudin sem sed purus suscipit sodales. In in mi a turpis consectetur</p>
-                                        </div>
-                                        <!-- /.card-content -->
-                                    </div>
-                                    <!-- /.card-inner -->
-                                </div>
-                                <!-- /.card -->
-                            </div>
-                            <!-- /.col-* -->
-                            <div class="col-sm-6">
-                                <div class="card card-dark" style="background-image: url(assets/img/tmp/listing-6.jpg);">
-                                    <div class="card-inner">
-                                        <div class="card-close">
-                                            <i class="fa fa-close"></i>
-                                        </div>
-                                        <!-- /.card-close -->
-                                        <div class="card-attribute">14/07/2017 12:30 - 13:15</div>
-                                        <div class="card-content">
-                                            <h2>
-                                                <a href="#">Etiam facilisis sem quis dui tempor commodo</a>
-                                            </h2>
-                                            <p>Donec sollicitudin sem sed purus suscipit sodales. In in mi a turpis consectetur</p>
-                                        </div>
-                                        <!-- /.card-content -->
-                                    </div>
-                                    <!-- /.card-inner -->
-                                </div>
-                                <!-- /.card -->
-                            </div>
-                            <!-- /.col-* -->
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.cards -->
-                </div>
-                <!-- /.box-inner -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-lg-6">
-            <div class="box">
-                <div class="box-inner">
-                    <div class="box-title clearfix">
-                        <h2>Files uploaded in media</h2>
-                    </div>
-                    <!-- /.box-title -->
-                    <div class="cards">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="card ">
-                                    <div class="card-inner">
-                                        <div class="card-close">
-                                            <i class="fa fa-close"></i>
-                                        </div>
-                                        <!-- /.card-close -->
-                                        <div class="card-attribute">14/07/2017 12:30 / 1.2MB</div>
-                                        <a href="#" class="card-icon card-red">
-                                            <span>PDF</span>
-                                        </a>
-                                        <!-- /.card-middle -->
-                                        <div class="card-content">
-                                            <h2>
-                                                <a href="#">Etiam facilisis sem quis dui tempor commodo</a>
-                                            </h2>
-                                            <p>Donec sollicitudin sem sed purus suscipit sodales. In in mi a turpis consectetur</p>
-                                        </div>
-                                        <!-- /.card-content -->
-                                    </div>
-                                    <!-- /.card-inner -->
-                                </div>
-                                <!-- /.card -->
-                            </div>
-                            <!-- /.col-* -->
-                            <div class="col-sm-6">
-                                <div class="card ">
-                                    <div class="card-inner">
-                                        <div class="card-close">
-                                            <i class="fa fa-close"></i>
-                                        </div>
-                                        <!-- /.card-close -->
-                                        <div class="card-attribute">14/07/2017 12:30 / 1.2MB</div>
-                                        <a href="#" class="card-icon card-red">
-                                            <span>PDF</span>
-                                        </a>
-                                        <!-- /.card-middle -->
-                                        <div class="card-content">
-                                            <h2>
-                                                <a href="#">Etiam facilisis sem quis dui tempor commodo</a>
-                                            </h2>
-                                            <p>Donec sollicitudin sem sed purus suscipit sodales. In in mi a turpis consectetur</p>
-                                        </div>
-                                        <!-- /.card-content -->
-                                    </div>
-                                    <!-- /.card-inner -->
-                                </div>
-                                <!-- /.card -->
-                            </div>
-                            <!-- /.col-* -->
-                            <div class="col-sm-6">
-                                <div class="card ">
-                                    <div class="card-inner">
-                                        <div class="card-close">
-                                            <i class="fa fa-close"></i>
-                                        </div>
-                                        <!-- /.card-close -->
-                                        <div class="card-attribute">14/07/2017 12:30 / 213KB</div>
-                                        <a href="#" class="card-icon card-green">
-                                            <span>XLS</span>
-                                        </a>
-                                        <!-- /.card-middle -->
-                                        <div class="card-content">
-                                            <h2>
-                                                <a href="#">Etiam facilisis sem quis dui tempor commodo</a>
-                                            </h2>
-                                            <p>Donec sollicitudin sem sed purus suscipit sodales. In in mi a turpis consectetur</p>
-                                        </div>
-                                        <!-- /.card-content -->
-                                    </div>
-                                    <!-- /.card-inner -->
-                                </div>
-                                <!-- /.card -->
-                            </div>
-                            <!-- /.col-* -->
-                            <div class="col-sm-6">
-                                <div class="card ">
-                                    <div class="card-inner">
-                                        <div class="card-close">
-                                            <i class="fa fa-close"></i>
-                                        </div>
-                                        <!-- /.card-close -->
-                                        <div class="card-attribute">14/07/2017 12:30 / 213KB</div>
-                                        <a href="#" class="card-icon card-green">
-                                            <span>XLS</span>
-                                        </a>
-                                        <!-- /.card-middle -->
-                                        <div class="card-content">
-                                            <h2>
-                                                <a href="#">Etiam facilisis sem quis dui tempor commodo</a>
-                                            </h2>
-                                            <p>Donec sollicitudin sem sed purus suscipit sodales. In in mi a turpis consectetur</p>
-                                        </div>
-                                        <!-- /.card-content -->
-                                    </div>
-                                    <!-- /.card-inner -->
-                                </div>
-                                <!-- /.card -->
-                            </div>
-                            <!-- /.col-* -->
+                            @endforeach
                         </div>
                         <!-- /.row -->
                     </div>

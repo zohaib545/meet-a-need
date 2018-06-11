@@ -53,9 +53,10 @@ ClickEventHandler.prototype.getPlaceInformation = function (placeId) {
 };
 
 function showImages(photos) {
-    photos.forEach((photo, index) => {
-        let pic = photo.getUrl({ 'maxWidth': 500, 'maxHeight': 500 });
-        $('.images-row').append(`
+    if (photos != null) {
+        photos.forEach((photo, index) => {
+            let pic = photo.getUrl({ 'maxWidth': 500, 'maxHeight': 500 });
+            $('.images-row').append(`
             <div class="col-sm-3">
                 <div class="card">
                     <img class="card-img-top" src="${pic}"
@@ -66,5 +67,9 @@ function showImages(photos) {
                 </div>
             </div>
         `);
-    })
+            $('.location-images').append(`
+            <input type="hidden" name="images[]" value="${pic}">
+        `);
+        })
+    }
 }

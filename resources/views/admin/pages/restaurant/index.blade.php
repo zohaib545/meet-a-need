@@ -1,7 +1,7 @@
 @extends('admin.common.master')
 
 <!-- page title -->
-@section('title', 'Universities')
+@section('title', 'Restaurants')
 <!-- page title -->
 
 <!-- page styles -->
@@ -10,7 +10,7 @@
 @section('page_styles') @stop()
 
 <!-- page heading and subheading-->
-@section('page_heading', 'Universities') @section('page_subheading', 'View All')
+@section('page_heading', 'Restaurants') @section('page_subheading', 'View All')
 
 <!-- previous_page -->
 @section('previous_page_url')
@@ -23,7 +23,7 @@
 <!-- breadcrumbs -->
 @section('breadcrumbs')
 <a class="breadcrumb-item" href="{{url('admin')}}">Dashboard</a>
-<span class="breadcrumb-item active">University</span>
+<span class="breadcrumb-item active">Restaurant</span>
 @stop()
 <!-- breadcrumbs -->
 
@@ -43,7 +43,7 @@
                 <th class="min-width center">#</th>
                 <th>Name</th>
                 <th>Address</th>
-                <th>Sector</th>
+                <th>Pricing</th>
                 <th>Phone</th>
                 <th class="min-width center">Place&nbsp;ID</th>
                 <th class="min-width center">Created&nbsp;Date</th>
@@ -51,26 +51,26 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($universities as $index => $university)
+            @foreach($restaurants as $index => $restaurant)
             <tr>
                 <td class="min-width center id">{{$index+1}}</td>
                 <td>
-                    <a href="">{{$university->location->name}}</a>
+                    <a href="">{{$restaurant->location->name}}</a>
                 </td>
                 <td>
-                    {{$university->location->address}}
+                    {{$restaurant->location->address}}
                 </td>
                 <td>
-                    {{$university->sector == null? 'N/A': $university->sector}}
+                    {{$restaurant->pricing}}
                 </td>
                 <td>
-                    {{$university->phone == null? 'N/A': $university->phone}}
+                    {{$restaurant->phone}}
                 </td>
                 <td class="min-width">
-                    {{$university->location->place_id}}
+                    {{$restaurant->location->place_id}}
                 </td>
                 <td class="center">
-                    {{date('M d, Y', strtotime($university->created_at))}}
+                    {{date('M d, Y', strtotime($restaurant->created_at))}}
                 </td>
                 <td class="min-width">
                     <div class="btn-group" role="group">
@@ -78,12 +78,12 @@
                             Actions
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url('admin/university/'.$university->location->slug.'/edit')}}">Edit</a>
+                            <a class="dropdown-item" href="{{url('admin/restaurant/'.$restaurant->location->slug.'/edit')}}">Edit</a>
                             <form action="{{url('admin/location')}}" method="POST">
                                 @csrf
                                 <!--  -->
                                 @method('DELETE')
-                                <input type="hidden" name="id" value="{{$university->location->id}}">
+                                <input type="hidden" name="id" value="{{$restaurant->location->id}}">
                                 <button class="dropdown-item" href="#">Delete</button>
                             </form>
                         </div>

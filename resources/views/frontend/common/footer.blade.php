@@ -33,54 +33,37 @@
                         </div>
                     </div>
                     <!-- /.col-* -->
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="widget">
                             <ul class="nav nav-pills">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index-directory.html">Directory Version</a>
+                                    <a class="nav-link" href="{{url('/')}}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index-classified.html">Classified Version</a>
+                                    <a class="nav-link" href="{{url('location')}}">Explore</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index-job-board.html">Job Board Version</a>
+                                    <a class="nav-link" href="{{url('about')}}">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index-real-estate.html">Real Estate Version</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index-automotive.html">Automotive Version</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index-travel.html">Travel &amp; Hotel Version</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index-restaurant.html">Restaurant Version</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="admin-dashboard.html">Admin Dashboard</a>
+                                    <a class="nav-link" href="{{url('contact')}}">Contact</a>
                                 </li>
                             </ul>
                         </div>
                         <!-- /.widget -->
                     </div>
                     <!-- /.col-* -->
-                    <div class="col-lg-4">
+                    <div class="col-lg-5">
                         <div class="widget">
-                            <h3>Best deals in your inbox</h3>
+                            <h3>Your suggestions are important</h3>
                             <p>
-                                Join our newsletter for the most recent information. FYI this is not working form, just an example.
+                                Send us an email at
+                                <a href="mailto:someone@example.com">someone@example.com</a>
                             </p>
-                            <form method="post">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your e-mail address">
-                                </div>
-                                <!-- /.form-group -->
-                                <div class="form-group clearfix">
-                                    <button type="submit" class="btn btn-primary pull-right">Join Newsletter</button>
-                                </div>
-                                <!-- /.form-group -->
-                            </form>
+                            <p>
+                                We appreciate your feedback and we will act accordingly. It usually takes
+                                <b>1-2 business days</b> for us to reply to your queries.
+                            </p>
                         </div>
                         <!-- /.widget -->
                     </div>

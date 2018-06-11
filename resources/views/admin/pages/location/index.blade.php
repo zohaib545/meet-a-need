@@ -95,6 +95,9 @@
                 </div>
             </div>
             <!-- /.box-inner -->
+            <div class="location-images">
+                
+            </div>
             {{csrf_field()}}
         </form>
     </div>

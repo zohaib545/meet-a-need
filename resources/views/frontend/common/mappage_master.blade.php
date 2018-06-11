@@ -13,6 +13,7 @@
     <link href="{{asset('assets/css/jquery.raty.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/css/nouislider.min.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link href="{{asset('assets/css/explorer.css')}}" rel="stylesheet" type="text/css"> @yield('page_styles')
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.png')}}">
     <title>@yield('title') - Meet A Need</title>
@@ -49,6 +50,7 @@
     <script type="text/javascript" src="{{url('assets/js/jquery.affix.js')}}"></script>
     <script type="text/javascript" src="{{url('assets/js/jquery.scrollTo.js')}}"></script>
     <script type="text/javascript" src="{{url('assets/libraries/slick/slick.min.js')}}"></script> 
+    <script type="text/javascript" src="{{asset('assets/js/loader.js')}}"></script>
     @yield('page_scripts')
     <script type="text/javascript" src="assets/js/particles.min.js"></script>
     <script type="text/javascript" src="assets/js/explorer.js"></script>

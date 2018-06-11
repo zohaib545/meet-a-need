@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="warning">
                     <h1>404</h1>
-                    <p>Page not found. Please use search in header.</p>
+                    <p>Page not found</p>
                     <a href="{{ URL::previous() }}" class="btn btn-primary">
                         <i class="fa fa-long-arrow-left"></i> Return Back</a>
                 </div>

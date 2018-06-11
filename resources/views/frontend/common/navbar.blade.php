@@ -17,11 +17,9 @@
                 <!-- /.header-logo -->
                 <div class="header-nav">
                     <div class="primary-nav-wrapper">
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Home</a>
-                            </li>
-                        </ul>
+                        <!--  -->
+                        @include('frontend.common.menu')
+                        <!--  -->
                     </div>
                     <!-- /.primary-nav-wrapper -->
                 </div>
@@ -30,18 +28,6 @@
                     <span></span>
                     <span></span>
                 </div>
-                <!-- /.header-toggle -->
-                <div class="header-actions">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link modal-submit" id="modal-action-submit" data-toggle="modal" data-target="#modal-submit">
-                                <i class="fa fa-plus"></i>
-                                <span>Submit Listing</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.header-actions -->
             </div>
             <!-- /.header-inner -->
         </div>

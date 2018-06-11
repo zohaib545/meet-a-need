@@ -37,19 +37,19 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{url('admin/healthcare-facility')}}" class="nav-link {{Request::is('admin/healthcare-facility/*')? 'active': ''}}">
+                <a href="{{url('admin/healthcare')}}" class="nav-link {{Request::is('admin/healthcare/*') || Request::is('admin/healthcare')? 'active': ''}}">
                     <i class="fa fa-hospital-o"></i>
-                    <span>Healthcare Facilities</span>
+                    <span>Healthcare</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{url('admin/hotel')}}" class="nav-link {{Request::is('admin/hotel/*')? 'active': ''}}">
+                <a href="{{url('admin/hotel')}}" class="nav-link {{Request::is('admin/hotel/*') || Request::is('admin/hotel')? 'active': ''}}">
                     <i class="fa fa-hotel"></i>
                     <span>Hotels</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{url('admin/restaurant')}}" class="nav-link {{Request::is('admin/restaurant/*')? 'active': ''}}">
+                <a href="{{url('admin/restaurant')}}" class="nav-link {{Request::is('admin/restaurant/*') || Request::is('admin/restaurant')? 'active': ''}}">
                     <i class="fa fa-cutlery"></i>
                     <span>Restaurants</span>
                 </a>
@@ -57,12 +57,6 @@
         </ul>
         <h3>Administration</h3>
         <ul class="nav flex-column">
-            <li class="nav-item">
-                <a href="{{url('admin/user')}}" class="nav-link {{Request::is('admin/user/*')? 'active': ''}}">
-                    <i class="fa fa-users"></i>
-                    <span>Users</span>
-                </a>
-            </li>
             <li class="nav-item">
                 <a href="{{url('admin/profile')}}" class="nav-link {{Request::is('admin/profile/*')? 'active': ''}}">
                     <i class="fa fa-cog"></i>
