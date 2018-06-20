@@ -6,19 +6,30 @@
 
 @section('page_styles')
 <style>
-    #about_page p{
+    #about_page p {
         font-size: 18px;
     }
-    #about_page h3{
+
+    #about_page h3 {
         font-size: 30px;
     }
-    #about_page h4{
+
+    #about_page h4 {
         font-size: 26px;
     }
-    #about_page .bordered-col{
+
+    #about_page .bordered-col {
         border: 2px solid #22b88b;
         padding: 18px;
         margin-bottom: 50px;
+    }
+
+    #about_page figcaption{
+        font-size: 20px;
+    }
+
+    #about_page .img-fluid{
+        max-width: 70%;
     }
 </style>
 @stop()
@@ -36,8 +47,6 @@
                 <div class="row">
                     <div class="col-12 bordered-col">
                         <h3>About Us</h3>
-                        <img src="{{asset('images/about-banner.jpg')}}" alt="" class="img img-responsive img-fluid" width="100%">
-                        <hr>
                         <h4>Introduction</h4>
                         <p>
                             From the very start it has been a real problem that user cannot acquire data on a single site, they have to switch sites,
@@ -96,6 +105,28 @@
                             is important because everybody will be able to achieve information in an easy way Safe, informational,
                             professional and reasonable services for customers.
                         </p>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <figure class="figure">
+                                    <img src="{{asset('images/about-banner.jpg')}}" alt="" class="img img-responsive mx-auto d-block rounded-circle img-fluid" width="100%">
+                                    <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-md-4">
+                                <figure class="figure">
+                                    <img src="{{asset('images/about-banner.jpg')}}" alt="" class="img img-responsive mx-auto d-block rounded-circle img-fluid" width="100%">
+                                    <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-md-4">
+                                <figure class="figure">
+                                    <img src="{{asset('images/about-banner.jpg')}}" alt="" class="img img-responsive mx-auto d-block rounded-circle img-fluid" width="100%">
+                                    <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
