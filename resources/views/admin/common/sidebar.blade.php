@@ -58,9 +58,15 @@
         <h3>Administration</h3>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="{{url('admin/profile')}}" class="nav-link {{Request::is('admin/profile/*')? 'active': ''}}">
+                <a href="{{url('admin/profile')}}" class="nav-link {{Request::is('admin/profile')? 'active': ''}}">
                     <i class="fa fa-cog"></i>
                     <span>Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{url('admin/admins')}}" class="nav-link {{Request::is('admin/admins/*') || Request::is('admin/admins') ? 'active': ''}}">
+                    <i class="fa fa-lock"></i>
+                    <span>Manage Admins</span>
                 </a>
             </li>
         </ul>

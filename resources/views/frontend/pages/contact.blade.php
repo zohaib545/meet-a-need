@@ -64,7 +64,8 @@
                 <!-- /.row -->
                 <h3>We’d love to hear from you. Say us hello!</h3>
                 <div class="contact-form-wrapper mb80">
-                    <form class="contact-form" method="post" action="?">
+                    <form class="contact-form" method="post" action="">
+                        @csrf
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="form-group">
@@ -94,7 +95,7 @@
                         <!-- /.row -->
                         <div class="form-group">
                             <label for="contact-form-message">Message</label>
-                            <textarea class="form-control" id="contact-form-message" rows="6"></textarea>
+                            <textarea class="form-control" name="message" id="contact-form-message" rows="6"></textarea>
                         </div>
                         <!-- /.form-group -->
                         <div class="clearfix">

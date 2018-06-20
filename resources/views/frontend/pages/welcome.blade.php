@@ -47,11 +47,6 @@
                             <!-- /.primary-nav-wrapper -->
                         </div>
                         <!-- /.header-nav -->
-                        <div class="header-toggle toggle">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
                     </div>
                     <!-- /.header-inner -->
                 </div>
@@ -119,6 +114,87 @@
             <!-- /.hero-image -->
         </div>
         <!-- /.hero-image-wrapper -->
+        <div class="main-wrapper">
+            <div class="main">
+                <div class="main-inner">
+                    <div class="container">
+                        <div class="content">
+                            <div class="page-header">
+                                <h2>Featured Businesses</h2>
+                                <p>See the most recent listings available in directory catalogue added by our users. All listings
+                                    are verified by our editors staff.</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <a class="image-item" href="{{url('location')}}">
+                                        <span class="image-item-background" style="background-image: url('images/university.jpg')"></span>
+                                        <strong>Universities</strong>
+                                    </a>
+                                    <!-- /.image-item -->
+                                </div>
+                                <div class="col-sm-3">
+                                    <a class="image-item">
+                                        <span class="image-item-background" style="background-image: url('images/hospital.jpg')"></span>
+                                        <strong>Hospitals</strong>
+                                    </a>
+                                    <!-- /.image-item -->
+                                </div>
+                                <div class="col-sm-3">
+                                    <a class="image-item">
+                                        <span class="image-item-background" style="background-image: url('images/hotel.jpg')"></span>
+                                        <strong>Hotels</strong>
+                                    </a>
+                                    <!-- /.image-item -->
+                                </div>
+                                <div class="col-sm-3">
+                                    <a class="image-item">
+                                        <span class="image-item-background" style="background-image: url('images/restaurant.jpg')"></span>
+                                        <strong>Restaurants</strong>
+                                    </a>
+                                    <!-- /.image-item -->
+                                </div>
+                            </div>
+                            @if($popularLocations->count() >= 7)
+                            <div class="carousel-fullwidth">
+                                <div class="carousel-fullwidth-inner">
+                                    <div class="listing-boxes">
+                                        <div class="row mb-30 carousel-items">
+                                            @foreach($popularLocations as $location)
+                                            <div class="col">
+                                                <div class="listing-box">
+                                                    <div class="listing-box-inner">
+                                                        <a href="{{url('location/'.$location->place_id)}}" class="listing-box-image">
+                                                            <span class="listing-box-image-content" style="background-image: url({{$location->images->count() > 0? $location->images[0]->url : 'assets/img/tmp/listing-1.jpg'}})"></span>
+                                                            <!-- /.listing-box-image-content -->
+                                                            <span class="listing-box-category tag text-uppercase">{{$location->type}}</span>
+                                                        </a>
+                                                        <!-- /.listing-box-image -->
+                                                        <div class="listing-box-content">
+                                                            <h2>
+                                                                <a href="{{url('location/'.$location->place_id)}}">{{$location->name}}</a>
+                                                            </h2>
+                                                            <h3>{{$location->address}}</h3>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.listing-box-inner -->
+                                                </div>
+                                                <!-- /.listing-box -->
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                        <!-- /.row -->
+                                    </div>
+                                    <!-- /.listing-boxes -->
+                                </div>
+                                <!-- /.carousel-fullwidth-inner -->
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!--  -->
         @include('frontend.common.footer')
         <!--  -->

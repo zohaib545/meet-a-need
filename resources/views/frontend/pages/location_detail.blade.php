@@ -107,7 +107,7 @@
                                                 <span>
                                                     <a href="{{$location->detail->website}}" target="_blank">{{$location->detail->website}}</a>
                                                 </span>
-                                                @elseif($place->website != null)
+                                                @elseif(property_exists($place, 'website'))
                                                 <span>
                                                     <a href="{{$place->website}}" target="_blank">{{$place->website}}</a>
                                                 </span>

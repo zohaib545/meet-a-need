@@ -23,11 +23,6 @@
                     </div>
                     <!-- /.primary-nav-wrapper -->
                 </div>
-                <div class="header-toggle toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
             <!-- /.header-inner -->
         </div>

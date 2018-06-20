@@ -3,6 +3,22 @@ function initMap() {
         document.getElementById('map-object'), {
             zoom: 12, center: { lat: 31.4826352, lng: 74.3637895 }
         });
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            var marker = new google.maps.Marker({position: pos, map: map});
+
+        }, function () {
+            console.log("Error occured");
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        // handleLocationError(false, infoWindow, map.getCenter());
+        console.log("No geo location")
+    }
     var input = document.getElementById('search');
     var autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);

@@ -1,12 +1,31 @@
 @extends('frontend.common.innerpage_master')
 
 <!-- page title -->
-@section('title', 'Contact')
+@section('title', 'About')
 <!-- page title -->
+
+@section('page_styles')
+<style>
+    #about_page p{
+        font-size: 18px;
+    }
+    #about_page h3{
+        font-size: 30px;
+    }
+    #about_page h4{
+        font-size: 26px;
+    }
+    #about_page .bordered-col{
+        border: 2px solid #22b88b;
+        padding: 18px;
+        margin-bottom: 50px;
+    }
+</style>
+@stop()
 
 <!-- Page Content -->
 @section('page_content')
-<div class="main-wrapper">
+<div class="main-wrapper" id="about_page">
     <div class="main">
         <div class="main-inner">
             <div class="container">
@@ -15,8 +34,11 @@
                     <span class="breadcrumb-item active">About</span>
                 </nav>
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 bordered-col">
                         <h3>About Us</h3>
+                        <img src="{{asset('images/about-banner.jpg')}}" alt="" class="img img-responsive img-fluid" width="100%">
+                        <hr>
+                        <h4>Introduction</h4>
                         <p>
                             From the very start it has been a real problem that user cannot acquire data on a single site, they have to switch sites,
                             search and compare their results. This act makes them anxious and a bit furious. By this project
@@ -29,6 +51,7 @@
                             This system is designed to minimize the time investment and to facilitate the users by fulfilling
                             their needs.
                         </p>
+                        <h4>Purpose</h4>
                         <p>
                             Web based advertising sites are appealing for several reasons which include People are getting more used to work with computers
                             to do all sorts of things, namely sensitive operations such as shopping and home banking and
@@ -36,6 +59,7 @@
                             about that particular thing. The main purpose of this system is to provide them comfort as well
                             as 24 hours service without any difficulty.
                         </p>
+                        <h4>Existing Solutions</h4>
                         <p>
                             Out of 1.9 billion (estimated) internet users all over the world, about 60 million (estimated) users belong to Pakistan.
                             In this era of busy life, there is no such appropriate website where different Convenience Hotels,
@@ -53,6 +77,7 @@
                             facility to user to get detailed required information.
 
                         </p>
+                        <h4>Proposed Solution</h4>
                         <p>
                             “Meet A Need” is a website where consumers are allowed to get Health, Universities, Hotel and Restaurant services that are
                             provided at one single platform. Health sector would provide complete information about nearby

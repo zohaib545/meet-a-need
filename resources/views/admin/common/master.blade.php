@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="{{asset('assets/fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
     <!--  -->
     @yield('plugin_styles')
     <!--  -->
@@ -31,10 +32,6 @@
                     <h1>@yield('page_heading')
                         <small>@yield('page_subheading')</small>
                     </h1>
-                    <div class="admin-page-title-actions">
-                        <a href="{{('admin/profile')}}" class="btn btn-secondary">
-                            <i class="fa fa-cog"></i> Settings</a>
-                    </div>
                     <!-- /.admin-page-title-actions -->
                 </div>
                 <!-- /.container-fluid -->
@@ -65,10 +62,17 @@
 <script type="text/javascript" src="{{asset('assets/js/jquery.scrollTo.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/loader.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/libraries/slick/slick.min.js')}}"></script>
+<script src="//cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
 <!--  -->
 @yield('page_scripts')
 <!--  -->
 <script type="text/javascript" src="{{asset('assets/js/particles.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/explorer.js')}}"></script>
+<script>
+    $(document).ready(function () {
+        $('table').DataTable();
+    });
+</script>
 
 </html>

@@ -10,7 +10,8 @@ class HomeController extends Controller
     public function index()
     {
         $locations = Location::orderBy('created_at', 'desc')->limit(15)->with('images')->get();
-        return view('frontend.pages.home')->with(['locations' => $locations]);
+        $popularLocations = Location::orderBy('views', 'desc')->limit(15)->with('images')->get();
+        return view('frontend.pages.home')->with(['locations' => $locations, 'popularLocations' => $popularLocations]);
     }
 
     public function infobox(Request $request)
@@ -35,8 +36,11 @@ class HomeController extends Controller
     public function location_detail($place_id)
     {
         $location = Location::where('place_id', $place_id)->first();
-        if($location)
+        if($location){
+            $location->views = $location->views + 1;
+            $location->save();
             $location->detail = $location->detail;
+        }
         $client = new \GuzzleHttp\Client();
         $res = $client->get("https://maps.googleapis.com/maps/api/place/details/json?placeid=$place_id&key=AIzaSyC36TsKE1EwXWhh1exmqnRz4ybKVlQ45a0");
         $place = json_decode($res->getBody()->getContents())->result;

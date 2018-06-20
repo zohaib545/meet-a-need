@@ -165,10 +165,6 @@ table select.form-control {
     height: 350px;
 }
 
-.hero-image-wrapper {
-    margin: 0 !important;
-}
-
 .footer-wrapper .nav-pills .nav-item:nth-child(2n),
 .footer-wrapper .nav-pills .nav-item {
     float: unset;
@@ -182,4 +178,10 @@ table select.form-control {
 .map-filter-wrapper, .hero-image-filter-wrapper{
     right: 40px !important;
     top: 8% !important;
+}
+
+.carousel-fullwidth {
+    background-color: #53bfb6;
+    margin: 0 -1200px 0px -1200px;
+    overflow: hidden;
 }

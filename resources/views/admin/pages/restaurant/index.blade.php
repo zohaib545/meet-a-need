@@ -74,19 +74,14 @@
                 </td>
                 <td class="min-width">
                     <div class="btn-group" role="group">
-                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-                            Actions
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url('admin/restaurant/'.$restaurant->location->slug.'/edit')}}">Edit</a>
-                            <form action="{{url('admin/location')}}" method="POST">
-                                @csrf
-                                <!--  -->
-                                @method('DELETE')
-                                <input type="hidden" name="id" value="{{$restaurant->location->id}}">
-                                <button class="dropdown-item" href="#">Delete</button>
-                            </form>
-                        </div>
+                        <a class="btn btn-warning" href="{{url('admin/restaurant/'.$restaurant->location->slug.'/edit')}}">Edit</a>
+                        <form action="{{url('admin/location')}}" method="POST">
+                            @csrf
+                            <!--  -->
+                            @method('DELETE')
+                            <input type="hidden" name="id" value="{{$restaurant->location->id}}">
+                            <button class="btn btn-danger" href="#">Delete</button>
+                        </form>
                     </div>
                 </td>
             </tr>

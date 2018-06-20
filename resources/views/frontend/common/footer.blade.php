@@ -58,7 +58,7 @@
                             <h3>Your suggestions are important</h3>
                             <p>
                                 Send us an email at
-                                <a href="mailto:someone@example.com">someone@example.com</a>
+                                <a href="mailto:hamzaamjad06@gmail.com">hamzaamjad06@gmail.com</a>
                             </p>
                             <p>
                                 We appreciate your feedback and we will act accordingly. It usually takes

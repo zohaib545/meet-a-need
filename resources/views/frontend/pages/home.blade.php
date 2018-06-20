@@ -14,6 +14,36 @@
                     <div class="map-results-list tse-scrollable">
                         <div class="tse-content">
                             <div class="map-results-header">
+                                <h3>Popular Places</h3>
+                                <p>
+                                    Have a look at the most popular places platform.
+                                </p>
+                            </div>
+                            <!-- /.map-results-header -->
+                            <div class="map-results-content clickable">
+                                @foreach($popularLocations as $index => $location)
+                                <div class="listing-row-medium" data-location="{{$location->id}}">
+                                    <div class="listing-row-medium-inner">
+                                        <a href="listings-detail.html" class="listing-row-medium-image" style="background-image: url({{$location->images->count() == 0? 'assets/img/tmp/listing-15.jpg' : $location->images[0]->url}});">
+                                        </a>
+                                        <div class="listing-row-medium-content">
+                                            <br>
+                                            <h4 class="listing-row-medium-title">
+                                                <a href="listings-detail.html">{{$location->name}}</a>
+                                            </h4>
+                                            <div class="listing-row-medium-address">
+                                                {{$location->address}}
+                                            </div>
+                                            <!-- /.listing-row-medium-address -->
+                                        </div>
+                                        <!-- /.listing-row-medium-content -->
+                                    </div>
+                                    <!-- /.listing-row-medium-inner -->
+                                </div>
+                                @endforeach
+                            </div>
+                            <!-- /.map-results-content -->
+                            <div class="map-results-header">
                                 <h3>Recently Added Places</h3>
                                 <p>
                                     Have a look at the most recent places added to our platform.

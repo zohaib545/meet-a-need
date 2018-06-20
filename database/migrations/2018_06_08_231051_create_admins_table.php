@@ -15,6 +15,12 @@ class CreateAdminsTable extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('password_reset_token')->nullable();
+            $table->string('profile_picture')->default('https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100');
+            $table->string('password');
+            $table->string('remember_token')->nullable();
             $table->timestamps();
         });
     }
