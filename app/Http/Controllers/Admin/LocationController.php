@@ -26,6 +26,8 @@ class LocationController extends Controller
             'description' => 'required|max:2000',
             'type' => 'required|in:university,healthcare,hotel,restaurant',
             'address' => 'required',
+            'lat' => 'required',
+            'lng' => 'required'
         ]);
         $location = new Location();
         $location->place_id = $request->input('place_id');
@@ -33,6 +35,8 @@ class LocationController extends Controller
         $location->address = $request->input('address');
         $location->type = $request->input('type');
         $location->description = $request->input('description');
+        $location->lat = $request->input('lat');
+        $location->lng = $request->input('lng');
         $location->save();
         if($request->images != null){
             foreach($request->images as $image){

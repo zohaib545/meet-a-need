@@ -15,7 +15,7 @@ class ContactController extends Controller
         $subject = $request->input('subject');
         $message = $request->input('message');
         try{
-            Mail::to('zohaib@encapsulatech.com')->send(new ContactMessage($name, $subject, $message, $email));
+            Mail::to('hamzaamjad06@gmail.com')->send(new ContactMessage($name, $subject, $message, $email));
         }
         catch(\Exception $e)
         {

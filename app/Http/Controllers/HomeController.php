@@ -7,11 +7,18 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $allLocations = Location::with('images');
+        if($request->input('type') != null)
+            $allLocations = $allLocations->where('type', $request->input('type'));
+        if($request->input('keyword') != null)
+            $allLocations = $allLocations->where([['name', 'LIKE', "%{$request->input('keyword')}%"]]);
+        $allLocations = $allLocations->get();
+        $allLocations = json_encode($allLocations);
         $locations = Location::orderBy('created_at', 'desc')->limit(15)->with('images')->get();
         $popularLocations = Location::orderBy('views', 'desc')->limit(15)->with('images')->get();
-        return view('frontend.pages.home')->with(['locations' => $locations, 'popularLocations' => $popularLocations]);
+        return view('frontend.pages.home')->with(['locations' => $locations, 'popularLocations' => $popularLocations, 'allLocations' => $allLocations]);
     }
 
     public function infobox(Request $request)

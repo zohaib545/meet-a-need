@@ -177,11 +177,15 @@ table select.form-control {
 
 .map-filter-wrapper, .hero-image-filter-wrapper{
     right: 40px !important;
-    top: 8% !important;
+    top: 16% !important;
 }
 
 .carousel-fullwidth {
     background-color: #53bfb6;
     margin: 0 -1200px 0px -1200px;
     overflow: hidden;
+}
+
+.map-filter .form-control, .hero-image-filter .form-control{
+    color: black !important;
 }

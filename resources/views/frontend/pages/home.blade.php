@@ -139,9 +139,21 @@
                 <div class="map-filter-wrapper">
                     <div class="container-fluid">
                         <div class="map-filter">
-                            <form>
+                            <form action="" method="GET">
                                 <div class="form-group">
-                                    <input type="text" id="search" class="form-control" placeholder="Location">
+                                    <input type="text" name="keyword" class="form-control" placeholder="Location">
+                                </div>
+                                <div class="form-group">
+                                    <select name="type" class="form-control">
+                                        <option value="">All</option>
+                                        <option value="university">University</option>
+                                        <option value="healthcare">Hospital</option>
+                                        <option value="hotel">Hotel</option>
+                                        <option value="restaurant">Restaurant</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -161,6 +173,12 @@
 @stop()
 <!-- Page Content -->
 @section('page_scripts')
+<script>
+    let locationString = "{{$allLocations}}";
+    locationString = locationString.replace(/&quot;/g, '\"');
+    let locations = JSON.parse(locationString);
+    console.log(locations);
+</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC36TsKE1EwXWhh1exmqnRz4ybKVlQ45a0&libraries=places"></script>
 <script src="{{asset('assets/js/google-map-infobox.min.js')}}"></script>
 <script src="{{asset('js/home.js')}}"></script>

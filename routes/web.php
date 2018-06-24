@@ -30,7 +30,11 @@ Route::group(['middleware' => ['guest:admin']],function(){
     Route::get('login', 'Admin\AdminController@login_index')->name('login');
     Route::post('login', 'Admin\AdminController@login')->name('login');
     Route::get('request-password', 'Admin\AdminController@request_index');
+    Route::post('request-password', 'Admin\AdminController@request_password');
     Route::get('reset-password', 'Admin\AdminController@reset_index');
+    Route::post('reset-password', 'Admin\AdminController@reset_password');
+    Route::get('password-request-confirmation', 'Admin\AdminController@request_confirmation');
+    Route::get('password-reset-confirmation', 'Admin\AdminController@reset_confirmation');
 });
 
 Route::prefix('admin')->group(function () {

@@ -42,6 +42,8 @@ ClickEventHandler.prototype.getPlaceInformation = function (placeId) {
     var me = this;
     this.placesService.getDetails({ placeId: placeId }, function (place, status) {
         if (status === 'OK') {
+            $('input[name="lat"]').val(place.geometry.location.lat());
+            $('input[name="lng"]').val(place.geometry.location.lng());
             $('.images-row').html('');
             $('#place_id').val(place.place_id);
             $('#name').val(place.name);

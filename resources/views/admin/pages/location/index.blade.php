@@ -99,6 +99,8 @@
                 
             </div>
             {{csrf_field()}}
+            <input type="hidden" name="lat" required>
+            <input type="hidden" name="lng" required>
         </form>
     </div>
 </section>

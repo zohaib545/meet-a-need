@@ -88,22 +88,22 @@
                 </div>
                 <!-- /.hero-image-inner -->
                 <div class="hero-image-categories">
-                    <a class="hero-image-category">
+                    <a href="{{url('location')}}?type=university" class="hero-image-category">
                         <i class="fa fa-institution"></i>
                         <strong>University</strong>
                     </a>
                     <!-- /.hero-image-category -->
-                    <a class="hero-image-category">
+                    <a href="{{url('location')}}?type=healthcare" class="hero-image-category">
                         <i class="fa fa-hospital-o"></i>
                         <strong>Hospital</strong>
                     </a>
                     <!-- /.hero-image-category -->
-                    <a class="hero-image-category">
+                    <a href="{{url('location')}}?type=hotel" class="hero-image-category">
                         <i class="fa fa-hotel"></i>
                         <strong>Hotel</strong>
                     </a>
                     <!-- /.hero-image-category -->
-                    <a class="hero-image-category">
+                    <a href="{{url('location')}}?type=restaurant" class="hero-image-category">
                         <i class="fa fa-cutlery"></i>
                         <strong>Restaurant</strong>
                     </a>
@@ -126,28 +126,28 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <a class="image-item" href="{{url('location')}}">
+                                    <a href="{{url('location')}}?type=university" class="image-item" href="{{url('location')}}">
                                         <span class="image-item-background" style="background-image: url('images/university.jpg')"></span>
                                         <strong>Universities</strong>
                                     </a>
                                     <!-- /.image-item -->
                                 </div>
                                 <div class="col-sm-3">
-                                    <a class="image-item">
+                                    <a href="{{url('location')}}?type=healthcare" class="image-item">
                                         <span class="image-item-background" style="background-image: url('images/hospital.jpg')"></span>
                                         <strong>Hospitals</strong>
                                     </a>
                                     <!-- /.image-item -->
                                 </div>
                                 <div class="col-sm-3">
-                                    <a class="image-item">
+                                    <a href="{{url('location')}}?type=hotel" class="image-item">
                                         <span class="image-item-background" style="background-image: url('images/hotel.jpg')"></span>
                                         <strong>Hotels</strong>
                                     </a>
                                     <!-- /.image-item -->
                                 </div>
                                 <div class="col-sm-3">
-                                    <a class="image-item">
+                                    <a href="{{url('location')}}?type=restaurant" class="image-item">
                                         <span class="image-item-background" style="background-image: url('images/restaurant.jpg')"></span>
                                         <strong>Restaurants</strong>
                                     </a>

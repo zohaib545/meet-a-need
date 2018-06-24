@@ -22,6 +22,8 @@ class CreateLocationsTable extends Migration
             $table->string('description', 2000);
             $table->string('slug');
             $table->integer('views')->default(0);
+            $table->string('lat');
+            $table->string('lng');
             $table->timestamps();
         });
     }

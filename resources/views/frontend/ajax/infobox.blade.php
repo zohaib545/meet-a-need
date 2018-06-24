@@ -3,7 +3,7 @@
         <i class="fa fa-close"></i>
     </div>
     <h3 class="infobox-title">
-        <a href="listing.html">{{$name}}</a>
+        <a href="{{url('location/'.$place_id)}}">{{$name}}</a>
     </h3>
     <h4 class="infobox-address">{{$address}}</h4>
     <div class="infobox-content">
@@ -13,7 +13,7 @@
                 @if(isset($location))
                 <div class="infobox-category tag">{{$location->type}}</div>
                 @endif
-                <table class="table table-bordered">
+                {{-- <table class="table table-bordered">
                     <tbody>
                         <tr>
                             <th><i class="fa fa-phone"></i> Phone</th>
@@ -32,7 +32,10 @@
                             @endif
                         </tr>
                     </tbody>
-                </table>
+                </table> --}}
+                <p>
+                    {{$location->description}}
+                </p>
             </div>
             <div class="infobox-more">
                 <a href="{{url('location/'.$place_id)}}">Read More
